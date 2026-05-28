@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELDMAX — Интернет-магазин профессиональной сварочной техники</title>
+    <meta name="description" content="Широкий выбор сварочных инверторов, полуавтоматов MIG/MAG, TIG аппаратов, плазморезов и масок от ведущего бренда WELDMAX. Гарантия 3 года, бесплатная доставка!">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- CSS Стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+    <!-- Интерактивный фон с частицами для искр -->
+    <div class="sparkles-container" id="sparkles-bg"></div>
+
+    <!-- ШАПКА МАГАЗИНА -->
+    <header class="main-header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo" id="header-logo">
+                <span class="logo-accent">WELD</span>MAX
+            </a>
+            
+            <nav class="main-nav" id="header-nav">
+                <a href="#catalog" class="nav-link">Каталог</a>
+                <a href="#features" class="nav-link">Преимущества</a>
+                <a href="#about" class="nav-link">О бренде</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Поиск в шапке -->
+                <div class="header-search-bar">
+                    <input type="text" id="global-search" placeholder="Поиск сварочной техники..." autocomplete="off">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+
+                <!-- Кнопка темы -->
+                <button class="theme-toggle" id="theme-btn" title="Сменить тему оформления" aria-label="Смена темы">
+                    <svg class="theme-sun-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>
+                    </svg>
+                </button>
+
+                <!-- Виджет сравнения -->
+                <button class="compare-trigger" id="compare-widget-btn" title="Перейти к сравнению">
+                    <svg viewBox="0 0 24 24" width="22" height="22">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 20V10M12 20V4M6 20v-6"/>
+                    </svg>
+                    <span class="compare-badge" id="compare-count">0</span>
+                </button>
+
+                <!-- Кнопка корзины -->
+                <button class="cart-trigger" id="cart-widget-btn" aria-label="Открыть корзину">
+                    <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="9" cy="21" r="1" fill="currentColor"/>
+                        <circle cx="20" cy="21" r="1" fill="currentColor"/>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                    </svg>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ БЛОК -->
+    <main>
+        <!-- PROMO HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="hero-content">
+                <span class="hero-tagline">Индустриальная мощь & Точность настроек</span>
+                <h1 class="hero-title">Профессиональное сварочное оборудование</h1>
+                <p class="hero-description">
+                    Ощутите мощь электрической дуги с оборудованием WELDMAX. Технологии синергетического управления, стабильный ток при просадках сети и безупречный шов.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-primary" id="hero-action-catalog">Перейти в каталог</a>
+                    <a href="#features" class="btn btn-secondary" id="hero-action-specs">Наши преимущества</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-spark-glow"></div>
+                <div class="hero-weld-device-container">
+                    <img src="images/welder_mma.png" alt="Сварочный аппарат WELDMAX" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Почему выбирают WELDMAX?</h2>
+                    <p class="section-subtitle">Мы проектируем технику, которой гордимся</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>3 года гарантии</h3>
+                        <p>Уверены в качестве сборки и надежности компонентов. Полная сервисная поддержка по всей стране.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
+                        <h3>Синергетическое управление</h3>
+                        <p>Интеллектуальные микропроцессоры автоматически выставляют идеальные параметры напряжения и скорости подачи.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <rect x="1" y="3" width="15" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <circle cx="5.5" cy="18.5" r="2.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                <circle cx="18.5" cy="18.5" r="2.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Бесплатная экспресс-доставка</h3>
+                        <p>Оперативно привезем ваш заказ до двери. Бесплатно при заказе любого аппарата от 15 000 руб.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- КАТАЛОГ И ФИЛЬТРЫ -->
+        <section class="catalog-section" id="catalog">
+            <div class="section-container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Каталог сварочной техники</h2>
+                    <p class="section-subtitle">Подберите идеальный инструмент для ваших задач</p>
+                </div>
+
+                <div class="catalog-layout">
+                    <!-- Панель фильтров -->
+                    <aside class="catalog-sidebar">
+                        <div class="filter-box">
+                            <h3 class="filter-title">Категории оборудования</h3>
+                            <div class="filter-categories" id="categories-filter">
+                                <button class="category-btn active" data-category="all">Все товары</button>
+                                <button class="category-btn" data-category="mma">Инверторы MMA</button>
+                                <button class="category-btn" data-category="mig">Полуавтоматы MIG/MAG</button>
+                                <button class="category-btn" data-category="tig">Аргонодуговые TIG</button>
+                                <button class="category-btn" data-category="cut">Плазморезы CUT</button>
+                                <button class="category-btn" data-category="masks">Маски «Хамелеон»</button>
+                            </div>
+                        </div>
+
+                        <div class="filter-box">
+                            <h3 class="filter-title">Цена, руб.</h3>
+                            <div class="price-slider-wrap">
+                                <div class="price-inputs">
+                                    <input type="number" id="price-min" value="0" min="0" placeholder="От">
+                                    <span class="price-separator">—</span>
+                                    <input type="number" id="price-max" value="60000" min="0" placeholder="До">
+                                </div>
+                                <input type="range" id="price-range" min="4000" max="60000" step="500" value="60000">
+                                <div class="range-labels">
+                                    <span>4 900 руб</span>
+                                    <span>60 000 руб</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-secondary btn-full" id="reset-filters-btn">Сбросить фильтры</button>
+                    </aside>
+
+                    <!-- Сетка товаров -->
+                    <div class="catalog-content">
+                        <!-- Активные поисковые теги -->
+                        <div class="catalog-status-bar">
+                            <span class="found-count" id="products-found-text">Найдено товаров: 8</span>
+                            <div class="sort-selector">
+                                <label for="sort-select">Сортировка:</label>
+                                <select id="sort-select">
+                                    <option value="default">По умолчанию</option>
+                                    <option value="price-asc">Сначала дешевые</option>
+                                    <option value="price-desc">Сначала дорогие</option>
+                                    <option value="rating-desc">По рейтингу</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Сетка -->
+                        <div class="products-grid" id="products-grid">
+                            <!-- Карточки товаров генерируются динамически через JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- БЛОК О БРЕНДЕ -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-visual">
+                        <img src="images/welder_mig.png" alt="Производство WELDMAX" class="about-img">
+                        <div class="about-glow"></div>
+                    </div>
+                    <div class="about-text">
+                        <h2>WELDMAX — стандарт надежности</h2>
+                        <p>
+                            На протяжении более 10 лет мы создаем надежное сварочное оборудование, сочетая промышленную выносливость с продвинутой пользовательской эргономикой. Наша цель — дать сварщику полный контроль над электрической дугой.
+                        </p>
+                        <p>
+                            Каждый аппарат проходит строгий 5-ступенчатый контроль качества в собственной лаборатории. Мы используем высококачественные IGBT-транзисторы последнего поколения, термостойкие печатные платы и мощные интеллектуальные кулеры охлаждения.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">10+</span>
+                                <span class="stat-lbl">Лет на рынке</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">50к+</span>
+                                <span class="stat-lbl">Довольных клиентов</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-lbl">Контроль качества</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ (FOOTER) -->
+    <footer class="main-footer" id="contacts">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo"><span class="logo-accent">WELD</span>MAX</a>
+                <p class="footer-desc">
+                    Профессиональная сварочная техника для любых задач. Качество, проверенное временем.
+                </p>
+                <div class="social-links">
+                    <!-- VK -->
+                    <a href="#" aria-label="ВКонтакте">VK</a>
+                    <!-- Telegram -->
+                    <a href="#" aria-label="Telegram">TG</a>
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube">YT</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Каталог</h4>
+                <ul>
+                    <li><a href="#catalog" onclick="filterCategory('mma')">Инверторы MMA</a></li>
+                    <li><a href="#catalog" onclick="filterCategory('mig')">Полуавтоматы MIG/MAG</a></li>
+                    <li><a href="#catalog" onclick="filterCategory('tig')">Аргонодуговые TIG</a></li>
+                    <li><a href="#catalog" onclick="filterCategory('cut')">Плазморезы CUT</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Покупателям</h4>
+                <ul>
+                    <li><a href="#features">Преимущества</a></li>
+                    <li><a href="#about">О бренде</a></li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Сервисные центры</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Контакты</h4>
+                <p><strong>Телефон:</strong> <a href="tel:88005553535">8 (800) 555-35-35</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@weldmax.ru">info@weldmax.ru</a></p>
+                <p><strong>Адрес:</strong> г. Москва, ул. Промышленная, д. 12, корп. 3</p>
+                <p class="working-hours">Пн-Пт: 09:00 — 18:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 WELDMAX. Все права защищены. Разработано с использованием передовых веб-стандартов.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== ВСПЛЫВАЮЩИЕ ПАНЕЛИ И ОКНА ==================== -->
+
+    <!-- БОКОВАЯ КОРЗИНА (CART DRAWER) -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+        <div class="cart-drawer-header">
+            <h3>Ваша корзина</h3>
+            <button class="close-btn" id="cart-close-btn" aria-label="Закрыть корзину">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="cart-drawer-items" id="cart-items-container">
+            <!-- Элементы корзины генерируются динамически -->
+            <div class="cart-empty-message">
+                <svg viewBox="0 0 24 24" width="48" height="48" class="empty-cart-icon">
+                    <circle cx="9" cy="21" r="1" fill="currentColor"/>
+                    <circle cx="20" cy="21" r="1" fill="currentColor"/>
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                </svg>
+                <p>Ваша корзина пока пуста</p>
+                <button class="btn btn-secondary" onclick="closeCartDrawer()">Начать покупки</button>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer" id="cart-footer">
+            <div class="cart-summary-row">
+                <span>Итого:</span>
+                <span class="cart-total-price" id="cart-total-price-val">0 руб</span>
+            </div>
+            <p class="delivery-notice">Бесплатная доставка применится при оформлении</p>
+            <button class="btn btn-primary btn-full" id="checkout-trigger-btn">Оформить заказ</button>
+        </div>
+    </aside>
+
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО ДЕТАЛЕЙ ТОВАРА (NATIVE DIALOG MODAL) -->
+    <dialog class="product-modal" id="details-modal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Закрыть">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="modal-grid" id="modal-grid-content">
+                <!-- Контент модального окна генерируется динамически через JS -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- ЛОТОК СРАВНЕНИЯ ТОВАРОВ (COMPARISON BAR / DRAWER) -->
+    <div class="compare-bar" id="compare-bar">
+        <div class="compare-bar-container">
+            <div class="compare-bar-info">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 20V10M12 20V4M6 20v-6"/>
+                </svg>
+                <div>
+                    <h4>Сравнение характеристик</h4>
+                    <p id="compare-bar-text">Добавлено товаров для сравнения: 0 из 3</p>
+                </div>
+            </div>
+            <div class="compare-bar-actions">
+                <button class="btn btn-secondary btn-sm" id="compare-clear-btn">Очистить</button>
+                <button class="btn btn-primary btn-sm" id="compare-show-modal-btn">Сравнить характеристики</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ДИАЛОГ СРАВНЕНИЯ ХАРАКТЕРИСТИК (NATIVE DIALOG MODAL) -->
+    <dialog class="compare-modal" id="compare-modal">
+        <div class="compare-modal-card">
+            <div class="compare-modal-header">
+                <h3>Сравнение моделей</h3>
+                <button class="modal-close-btn" id="compare-modal-close-btn" aria-label="Закрыть">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="compare-modal-table-wrap" id="compare-table-container">
+                <!-- Таблица сравнения генерируется динамически через JS -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- СИМУЛЯТОР ОФОРМЛЕНИЯ ЗАКАЗА (CHECKOUT OVERLAY MODAL) -->
+    <dialog class="checkout-modal" id="checkout-modal">
+        <div class="checkout-card">
+            <div class="checkout-header">
+                <h3>Оформление заказа WELDMAX</h3>
+                <button class="modal-close-btn" id="checkout-close-btn" aria-label="Закрыть">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Индикатор шагов -->
+            <div class="checkout-steps">
+                <div class="step active" id="step-indicator-1">
+                    <div class="step-num">1</div>
+                    <span class="step-lbl">Контакты</span>
+                </div>
+                <div class="step-line" id="step-line-1"></div>
+                <div class="step" id="step-indicator-2">
+                    <div class="step-num">2</div>
+                    <span class="step-lbl">Доставка</span>
+                </div>
+                <div class="step-line" id="step-line-2"></div>
+                <div class="step" id="step-indicator-3">
+                    <div class="step-num">3</div>
+                    <span class="step-lbl">Оплата</span>
+                </div>
+            </div>
+
+            <!-- Контент шагов -->
+            <form id="checkout-form" novalidate>
+                <!-- ШАГ 1: КОНТАКТЫ -->
+                <div class="checkout-step-content active" id="checkout-step-1">
+                    <div class="form-group">
+                        <label for="checkout-name">ФИО получателя *</label>
+                        <input type="text" id="checkout-name" required placeholder="Иванов Иван Иванович">
+                        <span class="error-message">Введите ваше ФИО</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkout-phone">Телефон *</label>
+                            <input type="tel" id="checkout-phone" required placeholder="+7 (999) 999-99-99">
+                            <span class="error-message">Введите корректный телефон</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">Email *</label>
+                            <input type="email" id="checkout-email" required placeholder="name@example.com">
+                            <span class="error-message">Введите корректный email</span>
+                        </div>
+                    </div>
+                    <div class="checkout-actions">
+                        <div></div>
+                        <button type="button" class="btn btn-primary" id="checkout-next-1">Далее</button>
+                    </div>
+                </div>
+
+                <!-- ШАГ 2: ДОСТАВКА -->
+                <div class="checkout-step-content" id="checkout-step-2">
+                    <div class="form-group">
+                        <label for="checkout-address">Адрес доставки *</label>
+                        <input type="text" id="checkout-address" placeholder="г. Москва, ул. Ленина, д. 15, кв. 42">
+                        <span class="error-message">Введите адрес доставки</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkout-city">Город *</label>
+                            <input type="text" id="checkout-city" placeholder="Москва">
+                            <span class="error-message">Укажите город</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-zip">Почтовый индекс</label>
+                            <input type="text" id="checkout-zip" placeholder="101000">
+                        </div>
+                    </div>
+                    <div class="delivery-options">
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery-method" value="courier" checked>
+                            <span class="option-details">
+                                <span class="option-title">Доставка курьером WELDMAX</span>
+                                <span class="option-desc">До дверей, бесплатно от 15 000 руб (иначе 490 руб)</span>
+                            </span>
+                        </label>
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery-method" value="pickup">
+                            <span class="option-details">
+                                <span class="option-title">Самовывоз со склада</span>
+                                <span class="option-desc">г. Москва, ул. Промышленная, д. 12 — бесплатно, сегодня</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="checkout-actions">
+                        <button type="button" class="btn btn-secondary" id="checkout-prev-2">Назад</button>
+                        <button type="button" class="btn btn-primary" id="checkout-next-2">Далее</button>
+                    </div>
+                </div>
+
+                <!-- ШАГ 3: ОПЛАТА И ИТОГ -->
+                <div class="checkout-step-content" id="checkout-step-3">
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method" value="card" checked>
+                            <span class="option-details">
+                                <span class="option-title">Онлайн картой на сайте (имитация)</span>
+                                <span class="option-desc">Быстрая оплата и мгновенное подтверждение</span>
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method" value="cash">
+                            <span class="option-details">
+                                <span class="option-title">При получении</span>
+                                <span class="option-desc">Наличными или картой курьеру</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Итоговая сводка заказа -->
+                    <div class="checkout-order-summary">
+                        <h4>Резюме заказа</h4>
+                        <div class="summary-list" id="checkout-summary-items">
+                            <!-- Итоги по товарам -->
+                        </div>
+                        <div class="summary-totals">
+                            <div class="summary-line">
+                                <span>Товары:</span>
+                                <span id="summary-subtotal">0 руб</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>Доставка:</span>
+                                <span id="summary-delivery">0 руб</span>
+                            </div>
+                            <div class="summary-line total">
+                                <span>Итого к оплате:</span>
+                                <span id="summary-total">0 руб</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button type="button" class="btn btn-secondary" id="checkout-prev-3">Назад</button>
+                        <button type="submit" class="btn btn-primary btn-sparkle" id="checkout-submit-btn">Подтвердить заказ</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- ШАГ УСПЕШНОГО ЗАКАЗА -->
+            <div class="checkout-success-view" id="checkout-success">
+                <div class="success-icon-wrap">
+                    <svg viewBox="0 0 24 24" width="64" height="64" class="success-checkmark">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 6L9 17l-5-5"/>
+                    </svg>
+                </div>
+                <h2>Заказ успешно оформлен!</h2>
+                <p>Благодарим за покупку оборудования WELDMAX. Виртуальный чек и накладная сгенерированы ниже.</p>
+                
+                <!-- Виртуальная накладная / чек -->
+                <div class="virtual-invoice" id="invoice-details">
+                    <!-- Генерируется через JS -->
+                </div>
+
+                <button class="btn btn-primary" id="success-done-btn">Вернуться в магазин</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Скрипты -->
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

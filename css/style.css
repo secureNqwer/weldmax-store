@@ -1982,6 +1982,8 @@ input:user-invalid + .error-message {
         padding-top: calc(var(--header-height) + 20px);
         min-height: auto;
         padding-bottom: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     
     .hero-content {
@@ -2068,5 +2070,36 @@ input:user-invalid + .error-message {
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+}
+
+/* Оптимизация для мобильных телефонов с узким экраном */
+@media (max-width: 600px) {
+    .header-search-bar {
+        display: none; /* Скрываем поиск из шапки, разгружая заголовок */
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 1.85rem !important; /* Уменьшаем шрифт, чтобы слово 'ПРОФЕССИОНАЛЬНОЕ' помещалось без скролла */
+        letter-spacing: -0.5px;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
     }
 }
